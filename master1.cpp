@@ -1,24 +1,22 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-    setlocale(LC_ALL, "rus");
-    int n, k, result{0};
-    cout << "Введите кол-во белочек - ";
-    cin >> n;
+int main() {
+    int h1, m1, s1, h2, m2, s2;
 
-    cout << "Введите кол-во орешков - ";
-    cin >> k;
+    // Ввод первого момента времени
+    cout << "Введите первый момент времени (часы, минуты, секунды): ";
+    cin >> h1 >> m1 >> s1;
 
-    result = n - k;
-    if (n == k) {
-        cout << "Кол-во орешков равно кол-ву белочек";
+    // Ввод второго момента времени
+    cout << "Введите второй момент времени (часы, минуты, секунды): ";
+    cin >> h2 >> m2 >> s2;
 
-    }
-    else {
-        cout << "Кол - во орехов осталось - " << result;
-    }
+    // Расчет количества секунд между двумя моментами времени
+    int total_seconds1 = h1 * 3600 + m1 * 60 + s1;
+    int total_seconds2 = h2 * 3600 + m2 * 60 + s2;
+    int elapsed_seconds = total_seconds2 - total_seconds1;
+
+    cout << "Между двумя моментами времени прошло " << elapsed_seconds << " секунд." << std::endl;
+
     return 0;
 }
-
-
